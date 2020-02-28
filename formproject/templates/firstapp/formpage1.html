@@ -1,0 +1,121 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+  <title>Smart Guide</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link href="{% static 'css/tower-file-input.css' %}" rel="stylesheet" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body style="background:linear-gradient(to bottom,rgb(255, 170, 10,0.9),rgba(237, 43, 170, 0.89)),url('{% static 'images/image_5.jpg'%}');">
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="{% static 'images/se.png' %}" height="35px" ;width="50px">&nbsp;Smart Guide</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="tour.html" class="nav-link">Tour</a></li>
+          <li class="nav-item"><a href="hotel.html" class="nav-link">Hotels</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>Add listing</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+
+  <!-- End WOWSlider.com BODY section -->
+
+  <div class="hero-wrap js-fullheight" style="background:linear-gradient(to bottom,rgb(255, 170, 10,0.9),rgba(237, 43, 170, 0.89)),url('{% static 'images/image_5.jpg'%}',no-repeat);">
+    <center>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
+          <div class="col-md-9 ftco-animate" data-scrollax=" properties: { translateY: '90%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '90%', opacity: 1.6 }"><strong>Explore <br></strong>Get Information in just one click</h1>
+
+            <br>
+            <main class="container">
+
+
+
+              <div>
+                <form method="post" enctype="multipart/form-data">
+                  {{form.as_p}} {% csrf_token %}
+                  <div class="tower-file">
+                    <input type="file" id="mainDemoInput" name="document" accept="image/*" />
+
+                    <label for="mainDemoInput" class="btn btn-success" style="width:190px;border-radius:20px;hover ">
+                      <span class="mdi mdi-upload"></span>Select Files
+                    </label>
+                    <br>
+                    <br>&nbsp;
+                    <button type="button" class="btn btn-danger tower-file-clear" title="Clear Selected Files" style="width:190px;border-radius:20px">
+                      <span class="mdi mdi-cancel pr-1"></span>Clear Selected Files
+                    </button>
+                    <br>
+                    <br>&nbsp;
+                    <button type="submit" value="Upload Image" id="submit" name="submit" class="btn btn-dark" style="width:190px;border-radius:20px">
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <br>
+              {% if not_found %}
+              <script>
+              swal({
+                title: "Sorry!",
+                text: "We were not able to find a match for your image ",
+                icon: "warning",
+              });
+              </script>
+              {% endif %}
+
+
+              <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+
+              <script src="{% static 'js/tower-file-input.js' %}"></script>
+              <script>
+                $('#mainDemoInput').fileInput({
+                  iconClass: 'mdi mdi-fw mdi-upload'
+                });
+              </script>
+
+
+            </main>
+
+
+
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+            <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+            <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+            <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+            <script src="{% static 'js/aos.js' %}"></script>
+            <script src="{% static 'js/scrollax.min.js' %}"></script>
+            <script src="{% static 'js/main.js' %}"></script>
+          </div>
+        </div>
+      </div>
+  </div>
+  </center>
+</body>
+
+</html>

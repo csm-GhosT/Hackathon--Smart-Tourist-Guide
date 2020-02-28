@@ -1,0 +1,475 @@
+/* font family
+	============================================================================================ */
+/* color variables
+	============================================================================================ */
+/* google fonts
+	============================================================================================ */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
+/* mixin start
+	============================================================================================ */
+/* Medium Layout: 1280px */
+/* Tablet Layout: 768px */
+/* Mobile Layout: 320px */
+/* Wide Mobile Layout: 480px */
+/* mixin end
+	============================================================================================ */
+/* global style start
+	============================================================================================ */
+body {
+
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.667;
+background:linear-gradient(to bottom,rgb(255, 170, 10),rgba(237, 43, 170, 0.89));
+}
+
+
+button {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+  line-height: 1.25;
+}
+
+h1,
+.h1 {
+  font-size: 50px;
+}
+
+p{
+    color: black;
+    font-size: 18px;
+}
+.primary-text {
+  color:white;
+}
+
+.
+.pb-90px {
+  padding-bottom: 60px;
+}
+
+@media (min-width: 992px) {
+  .pb-90px {
+    padding-bottom: 90px;
+  }
+}
+
+.mh-tour {
+  max-height: 630px;
+}
+
+.section-margin {
+  margin: 65px 0;
+}
+
+@media (min-width: 992px) {
+  .section-margin {
+    margin: 130px 0;
+  }
+}
+
+.section-margin-large {
+  margin: 65px 0;
+}
+
+@media (min-width: 992px) {
+  .section-margin-large {
+    margin: 140px 0;
+  }
+}
+
+.section-padding {
+  padding: 65px 0;
+}
+
+@media (min-width: 992px) {
+  .section-padding {
+    padding: 130px 0;
+  }
+}
+
+.generic-margin {
+  margin-top: 100px;
+}
+
+@media (min-width: 992px) {
+  .generic-margin {
+    margin-top: 180px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .generic-margin {
+    margin-top: 250px;
+  }
+}
+
+/* global style end
+	============================================================================================ */
+/* header style start
+  ============================================================================================ */
+
+
+/* header style end
+	============================================================================================ */
+@media (max-width: 1619px) {
+  /* Main Menu Area css
+	============================================================================================ */
+  .header_area .navbar .search {
+    margin-left: 40px;
+  }
+  /* End Main Menu Area css
+	============================================================================================ */
+}
+
+@media (max-width: 1199px) {
+  /* Main Menu Area css
+	============================================================================================ */
+  .header_area .navbar .nav .nav-item {
+    margin-right: 28px;
+  }
+  /* End Main Menu Area css
+	============================================================================================ */
+  /* Home Banner Area css
+	============================================================================================ */
+  .home_banner_area .banner_inner {
+    padding: 100px 0px;
+  }
+  /* End Home Banner Area css
+	============================================================================================ */
+  .header_area .navbar .tickets_btn {
+    margin-left: 40px;
+  }
+  .home_banner_area .banner_inner .banner_content h2 br {
+    display: none;
+    font-size: 36px;
+  }
+  .home_banner_area .banner_inner .banner_content h2 {
+    font-size: 36px;
+    line-height: 45px;
+  }
+}
+
+
+  /* Home Banner Area css
+	============================================================================================ */
+  .home_banner_area .banner_inner .banner_content h2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .home_banner_area {
+    min-height: 450px;
+  }
+  .home_banner_area .banner_inner {
+    min-height: 450px;
+  }
+  .blog_banner .banner_inner .blog_b_text {
+    margin-top: 0px;
+  }
+  .home_banner_area .banner_inner .banner_content img {
+    display: none;
+  }
+  .home_banner_area .banner_inner .banner_content h5 {
+    margin-top: 0px;
+  }
+  /* End Home Banner Area css
+	============================================================================================ */
+  .p_120 {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .main_title h2 {
+    font-size: 25px;
+  }
+  /* Elements Area css
+	============================================================================================ */
+  .sample-text-area {
+    padding: 70px 0 70px 0;
+  }
+  .generic-blockquote {
+    padding: 30px 15px 30px 30px;
+  }
+  /* End Elements Area css
+
+  
+  .pad_top {
+    padding-top: 70px;
+  }
+  .pad_btm {
+    padding-bottom: 70px;
+  }
+}
+
+
+  .home_banner_area .banner_inner .banner_content {
+    padding: 30px 15px;
+    margin-top: 0px;
+  }
+  .banner_content .white_btn {
+    display: block;
+  }
+  .home_banner_area .banner_inner .banner_content h3 {
+    font-size: 24px;
+  }
+  /* End Home Banner Area css
+	============================================================================================ */
+  .banner_area .banner_inner .banner_content h2 {
+    font-size: 32px;
+  }
+  
+  .testi_item .media .d-flex {
+    padding-right: 0px;
+  }
+  .testi_item .media .d-flex img {
+    width: auto;
+    margin-bottom: 15px;
+  }
+  .testi_item .media {
+    display: block;
+  }
+  .banner_btn {
+    margin-bottom: 20px;
+  }
+}
+
+/* banner section start
+	============================================================================================ */
+.hero-banner {
+  padding-top: 120px;
+}
+
+@media (min-width: 992px) {
+  .hero-banner {
+    padding-top: 160px;
+  }
+}
+.hero-banner p{
+    font-size: 18px;
+     color:yellow;
+}
+.hero-banner h1 {
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 1200x) {
+  .hero-banner h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-banner h1 {
+    font-size: 30px;
+  }
+}
+
+.hero-banner-sm {
+ 
+  background-size: cover;
+  padding-top: 140px;
+  padding-bottom: 90px;
+}
+
+@media (min-width: 992px) {
+  .hero-banner-sm {
+    padding-top: 240px;
+    padding-bottom: 140px;
+  }
+}
+
+.hero-banner-sm h1 {
+  text-transform: uppercase;
+  color: #6059f6;
+}
+
+@media (max-width: 991px) {
+  .hero-banner-sm h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner-sm h1 {
+    font-size: 28px;
+  }
+}
+
+.hero-banner-sm p {
+  margin-bottom: 0;
+}
+
+.hero-banner-sm-content {
+  max-width: 400px;
+}
+
+.bg-shape {
+  position: relative;
+}
+
+.bg-shape::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 595px;
+  height: 660px;
+ 
+  z-index: -1;
+}
+
+@media (max-width: 620px) {
+  .bg-shape::before {
+    display: none;
+  }
+}
+
+.bg-shape::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 755px;
+  height: 860px;
+ 
+  background-size: cover;
+  z-index: -1;
+}
+
+@media (max-width: 620px) {
+  .bg-shape::after {
+    display: none;
+  }
+}
+
+/* banner section end
+  ============================================================================================ */
+
+
+
+.magic-ball {
+  position: relative;
+}
+
+.magic-ball::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 8px solid #6059f6;
+  opacity: .5;
+  position: absolute;
+  bottom: -68px;
+  left: -15px;
+}
+
+@media (min-width: 768px) {
+  .magic-ball::before {
+    width: 70px;
+    height: 70px;
+    left: -35px;
+    border: 15px solid #6059f6;
+  }
+}
+
+
+
+.magic-ball-about::before {
+  top: 265px;
+  left: -32px;
+}
+
+
+
+.magic-ball-testimonial::before {
+  top: 265px;
+  left: -32px;
+}
+
+
+
+.magic-ball-banner::before {
+  top: 80px;
+  left: 130px;
+}
+
+
+
+.magic-ball-sm::before {
+  width: 60px;
+  height: 60px;
+  top: 280px;
+  left: -25px;
+}
+
+
+
+
+
+
+
+/*============ End Blog Single Styles  =============*/
+/*=================== custom button rule start ====================*/
+.button {
+  display: inline-block;
+  background-color: #6059f6;
+  color: #fff;
+  border-radius: 30px;
+  padding: 8px 25px;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+@media (min-width: 600px) {
+  .button {
+    padding: 12px 45px;
+  }
+}
+
+.button:hover {
+  background-color: #201aa3;
+  color: #fff;
+}
+
+.button-hero {
+  font-weight: 500;
+}
+
+.button-contactForm {
+  border-radius: 5px;
+}
+
+.button-shadow {
+  box-shadow: 0px 10px 20px 0px rgba(181, 176, 255, 0.2);
+}
+
+button.button {
+  border: 0;
+}
+
+/*=================== custom button rule end ====================*/
+/* footer style start
+	============================================================================================ */

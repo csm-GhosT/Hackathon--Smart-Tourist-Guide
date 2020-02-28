@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <title>Signup</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'font/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'font/iconic/css/material-design-iconic-font.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static '/animsition/css/animsition.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <!-- jQuery Modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+  <!-- sweet alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <style>
+    #color1 {
+      color: white;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="ex1" class="modal" style="background:white">
+    <p>Thanks for clicking. That felt good.</p>
+    <a href="#" rel="modal:close">Close</a>
+  </div>
+  <div class="limiter">
+    <div class="container-login100" style="background-image:linear-gradient(to bottom,rgb(255, 170, 10),rgba(237, 43, 170, 0.89)),url('{% static 'images/image_5.jpg' %}');">
+      <div class="">
+        <form class="login100-form validate-form" action="{% url 'user_signup' %}" method="POST">
+          {% csrf_token %}
+          <span class="login100-form-logo">
+                        <img src="{% static 'images/se.png' %}" style="width: 200%;height:100%">
+                    </span>
+          <center>
+            <h5>Smart Tourist Guide</h5>
+          </center>
+
+          <span class="login100-form-title p-b-34 p-t-27">
+                        Sign up
+                    </span>
+
+
+          <div class="wrap-input100 validate-input" data-validate="Enter Name">
+            <input class="input100" type="text" name="name" placeholder="Name">
+            <span class="focus-input100" data-placeholder="&#xf207;"></span>
+          </div>
+
+
+          <div class="wrap-input100 validate-input" data-validate="Enter Email">
+            <input class="input100" type="email" name="email" placeholder="Enter email">
+            <span class="focus-input100" data-placeholder="&#x2709;"></span>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate="Enter Mobile">
+            <input class="input100" type="number" name="number" placeholder="Mobile Number">
+            <span class="focus-input100" data-placeholder="&#xf2b6;"></span>
+          </div>
+          <div>
+
+            <label style="color: white">
+              Enter Gender
+            </label>
+            <br>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="customRadio" name="radio" value="1">
+              <label class="custom-control-label" style="cursor:pointer" for="customRadio" id="color1">Male</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="customRadio2" name="radio" value="2">
+              <label class="custom-control-label" style="cursor:pointer" for="customRadio2" id="color1">Female</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" class="custom-control-input" id="customRadio3" name="radio" value="3">
+              <label class="custom-control-label" style="cursor:pointer" for="customRadio3" id="color1">Other</label>
+            </div>
+          </div>
+          <br>
+          <div class="wrap-input100 validate-input" data-validate="Enter password">
+            <input class="input100" type="password" name="pass" placeholder="Password">
+            <span class="focus-input100" data-placeholder="&#xf191;"></span>
+          </div>
+
+          <!---  <div class="wrap-input100 validate-input" data-validate="Re-enter password">
+                            <input class="input100" type="password" name="pass" placeholder="Re-enter password">
+                            <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                        </div> -->
+          <div class="container-login100-form-btn">
+            <button type='submit' class="login100-form-btn" style="width:100%">
+              Sign up
+            </button>
+          </div>
+          <br>
+          <div class="container-login100-form-btn">
+            <a href={% url 'login' %} style="width:100%; text-decoration: inherit">
+              <button type='button' class="login100-form-btn" style="width:100%">
+                LogIn
+              </button>
+            </a>
+            <br> {% if signup %}
+            <script>
+              swal({
+                title: "Signup Success!",
+                text: "Please Login..!",
+                icon: "success",
+              });
+            </script>
+            {% else %} {% if integrity_error %}
+            <script>
+              swal({
+                title: "Signup Error!",
+                text: "Email/Phone already Registered, Please Login",
+                icon: "error",
+              });
+            </script>
+            {% endif %} {% endif %}
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="dropDownSelect1"></div>
+
+
+  <script src="{% static 'js1/main.js'%}"></script>
+
+</body>
+
+</html>

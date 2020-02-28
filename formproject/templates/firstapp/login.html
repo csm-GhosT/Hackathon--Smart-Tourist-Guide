@@ -1,0 +1,87 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'font/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'font/iconic/css/material-design-iconic-font.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+
+  <div class="limiter">
+    <div class="container-login100" style="background-image:linear-gradient(to bottom,rgb(255, 170, 10),rgba(237, 43, 170, 0.89)),url('{% static 'images/image_5.jpg' %}');">
+
+      <div class="">
+        <form class="login100-form validate-form" action="{% url 'user_login' %}" method="POST">
+          {% csrf_token %}
+          <span class="login100-form-logo" style="">
+                        <img src="{% static 'images/se.png' %}" style="width: 200%;height:100%">
+                    </span>
+          <center>
+            <h5>Smart Guide</h5>
+          </center>
+          <span class="login100-form-title p-b-34 p-t-27">Log in</span>
+
+          <div class="wrap-input100 validate-input" data-validate="Enter username">
+            <input class="input100" type="text" name="username" placeholder="Enter Email">
+            <span class="focus-input100" data-placeholder="&#xf207;"></span>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate="Enter password">
+            <input class="input100" type="password" name="pass" placeholder="Password">
+            <span class="focus-input100" data-placeholder="&#xf191;"></span>
+          </div>
+
+
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn" style="width: 100%" href="#">
+              Login
+            </button>
+          </div>
+          <br>
+
+        </form>
+        <div class="container-login100-form-btn">
+          <a href="{% url 'signup' %}" style="width:100%; text-decoration: inherit">
+            <button class="login100-form-btn" style="width: 100%" href="#" type="submit">
+              Signup
+            </button>
+          </a>
+        </div>
+        {% if login_failed %}
+        <script>
+          swal({
+            title: "Login Failed!",
+            text: "Invalid Email/Password maybe?",
+            icon: "error",
+          });
+        </script>
+        {% endif %}
+        <div class="text-center">
+          <br>
+          <a class="txt1" href="#">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="dropDownSelect1"></div>
+  <script src="{% static 'js1/main.js' %}"></script>
+
+</body>
+
+</html>

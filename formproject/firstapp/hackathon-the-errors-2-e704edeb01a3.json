@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "hackathon-the-errors-2",
+  "private_key_id": "e704edeb01a304aa9acfc49d62c74e5c5275449a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCoXExyelX6ACVd\nO3bgwdzZNGkUrITLMJ2aM0kGeAw5YORSxPHX41TRvRszaw9P9H8Ajxn9KuydGuN5\nLNaJN4Hd3re4jCDBg609Xplekif9Azlxzk35qshHHd1sB7+DH/2+smKj/Y3u8GGg\nsCanLDt+UvujhQGh4r3A+N5dKa2ZSLX/x4wH2V/jbsGx+Nw9Lb9u5Tgm9sVXuwgI\navvoqSm9mVFQIFZ3oZ8suc79EKvv0wYeQwGxihzia7ZvTZL80vIJy+bOj6+Q1XjT\nDOUUl4+4Q78ZdXZvPPbkT5v3wK6ZBcedSe17MLTy/3g72hdtntEFiJQbE20xTk2i\nJh1Gn2MZAgMBAAECggEAFC94xPLw8vfoguyZvKnRokMb5CwpAbmS88V5WGq1QH3i\n8h+FxXYOmdT7+Wa5H8N3JKiDm6x1UQLDyif7ktkSW3kT+u7mEH2KnESGy+VnIPkt\nfn0XMTtuJsSoYwbsybpgsGfv1qyUQ1UTx3HHOJzfhy5I2FqejvvB92x/MJlKJIn2\n6DjS7i4UpLjZJYdLHqQ6awEDdNR/onKnz/DA0QQ60SECXvs0eHWlDrxj6mzgP7/D\n9mgXLvGMDQrUNgC8nHiKsldQfi7yX1wCIgBrrWX8dfp9zzQ+nrEoMlPPw3w8W5Yd\nn2AGANFgb/tnbmbe2+qFudS2qA1gL5/tB+ABi6uN1wKBgQDUrvhiAX1UofhqlmFJ\nuKLnjTJXe5Ij3GAVXWitn341OomSTlbd2f/lfXqHF6HOMMCl3N1pvfZnsuX7/XV4\nG7H5tVGm0O7rlZFVRczD1rkGFvIgkYczvqm6A8KUMgviAUA59leQ9zZZkbv3InVv\nccB3TvDaD+SUur543/Bu3HjSQwKBgQDKpmPnnBUGSyvmAlgiMvuBEFLMq5cMzaCg\n+D0ShlHQBs5Go6TFXqJHVNrQfsumObQlkpoDLBirFTONbJWKJpnzoD4lB9PdsZbx\nKntB4HTFJ9QLlliCvqg5IYQNL+84iY0eDGnWYzCUH4m76bwPjCNeBMVryxiu4/7c\nHKr08gHlcwKBgFmnMBjQG+7TIA5+OaCD7lfBU1lBQ8dOHEqlR3z44JC7jkZYM5Ht\nVUt962qK8bAjKPJB+iua4gWwifYBT8VDl3B1mGfDZxNzxwG1HK3pE7GXdpV4AxAy\n7QT2lM03k36/nD1StHLtYsG7BwsUQYCq6MDiS/EABhET7zqw238//MZVAoGAPGVS\nqRhve6yzrJ1OPwMKyfBffPg20G4ITXEuYnL9tw4QNCVZWilWHARCIplngGb6Nah3\nljJyN6rd7mxKNR5EC8PaQZcPoabn4YBTs9J9erTgEYQBZRYFdOF0Ranfle4IzMfO\nU0LEm6C6n/KNReTyNXcej328IYN51YgFu3LU9dkCgYB36+mnSNIGScsQnej370or\nZI0U9RgB/X+jk13vd9v82hCP/ObqzsF5aH34xSOIhDWtMyVTm16MTDwl5bNDs6bN\nvwp56sMJJPl7G0xAP2LwJV6VdkMgObR0ELjGDP4PWf/I7TSh4mrJ4vS7GaaWo99/\nXYab8MBQ9HxJtX4I4clFpg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "avinash-jadhav@hackathon-the-errors-2.iam.gserviceaccount.com",
+  "client_id": "100643947107906160920",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/avinash-jadhav%40hackathon-the-errors-2.iam.gserviceaccount.com"
+}
