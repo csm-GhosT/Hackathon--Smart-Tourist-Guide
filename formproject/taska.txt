@@ -1,8 +1,13 @@
 pending :
 add loding animation
 add functionality for serach history counter
-add username in monument reiews table
-add css to comments section
+add username in monument reiews d table
+add 5 star rating system
+add feedback for monument system
+add google map
+
+*admin panel:
+
 
 completed:
 add gender in user db,signup
