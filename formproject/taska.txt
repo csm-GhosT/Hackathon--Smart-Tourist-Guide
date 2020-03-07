@@ -2,7 +2,6 @@ pending :
 add loding animation
 add functionality for serach history counter
 add username in monument reiews d table
-add 5 star rating system
 add feedback for monument system
 add google map
 
@@ -10,6 +9,7 @@ add google map
 
 
 completed:
+add 5 star rating system
 add gender in user db,signup
 add popups in login
 attach wiki links in info.html

@@ -16,7 +16,12 @@
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/loaders.css' %}">
+
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <style>
+
+  </style>
 </head>
 
 <body>
@@ -45,9 +50,34 @@
             <span class="focus-input100" data-placeholder="&#xf191;"></span>
           </div>
 
-
+          <!---loader-->
+          <div class="content" style="display: none;background: black;" id="loader">
+            <div class="overlay">
+              <div class="overlay-content">
+                <div class="multi-spinner-container">
+                  <div class="multi-spinner">
+                    <div class="multi-spinner">
+                      <div class="multi-spinner">
+                        <div class="multi-spinner">
+                          <div class="multi-spinner">
+                            <div class="multi-spinner"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                Loading
+              </div>
+            </div>
+          </div>
+          <script>
+            function display() {
+              document.getElementById("loader").style.display = "block";
+            }
+          </script>
           <div class="container-login100-form-btn">
-            <button class="login100-form-btn" style="width: 100%" href="#">
+            <button class="login100-form-btn" style="width: 100%" href="#" onclick="display()">
               Login
             </button>
           </div>
@@ -55,8 +85,8 @@
 
         </form>
         <div class="container-login100-form-btn">
-          <a href="{% url 'signup' %}" style="width:100%; text-decoration: inherit">
-            <button class="login100-form-btn" style="width: 100%" href="#" type="submit">
+          <a href="{% url 'user_signup' %}" style="width:100%; text-decoration: inherit">
+            <button class="login100-form-btn" style="width: 100%" href="#" type="submit" onclick="display()">
               Signup
             </button>
           </a>

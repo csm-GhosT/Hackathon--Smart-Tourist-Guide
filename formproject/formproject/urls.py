@@ -28,7 +28,18 @@ urlpatterns = [
     path('user_signup/',views.user_signup,name="user_signup"),
     path('user_login/',views.user_login,name="user_login"),
     path('information/',views.information_as_view,name="information"),
+    path('review_handler',views.review_handler,name="review_handler"),
+    path('info_handler',views.add_extra_info,name="info_handler"),
+
     # path('submit_review/',views.submit_and_display_review,name="submit_review"),
+    path('adminlogin/',views.adminlogin_as_view,name="adminlogin"),
+    path('adminfirstpage/',views.adminfirstpage_as_view,name="adminfirstpage"),
+    path('adminfeedback/',views.adminfeedback_as_view,name="adminfeedback"),
+    path('adminpending/',views.adminpending_as_view,name="adminpending"),
+    path('adminapproved/',views.adminapproved_as_view,name="adminapproved"),
+    path('admin_search_req/',views.admin_search_req,name="admin_search_req"),
+    path('scan_recpt/',views.scan_recipt_as_view,name="scan_recpt"),
+
 
 
 

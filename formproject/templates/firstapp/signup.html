@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html> {% load static %}
 <html lang="en">
 
 <head>
@@ -27,14 +26,13 @@
   <!-- jQuery Modal -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-
+  <link rel="stylesheet" type="text/css" href="{% static 'css/loaders.css' %}">
   <!-- sweet alert -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <style>
     #color1 {
       color: white;
     }
-
   </style>
 </head>
 
@@ -97,7 +95,7 @@
           </div>
           <br>
           <div class="wrap-input100 validate-input" data-validate="Enter password">
-            <input class="input100" type="password" name="pass" placeholder="Password">
+            <input class="input100" type="password" name="pass" required placeholder="Password">
             <span class="focus-input100" data-placeholder="&#xf191;"></span>
           </div>
 
@@ -105,8 +103,34 @@
                             <input class="input100" type="password" name="pass" placeholder="Re-enter password">
                             <span class="focus-input100" data-placeholder="&#xf191;"></span>
                         </div> -->
+
+          <div class="content" style="display: none;background: black;" id="loader">
+            <div class="overlay">
+              <div class="overlay-content">
+                <div class="multi-spinner-container">
+                  <div class="multi-spinner">
+                    <div class="multi-spinner">
+                      <div class="multi-spinner">
+                        <div class="multi-spinner">
+                          <div class="multi-spinner">
+                            <div class="multi-spinner"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                Loading
+              </div>
+            </div>
+          </div>
+          <script>
+            function display() {
+              document.getElementById("loader").style.display = "block";
+            }
+          </script>
           <div class="container-login100-form-btn">
-            <button type='submit' class="login100-form-btn" style="width:100%">
+            <button type='submit' class="login100-form-btn" style="width:100%" onclick="display()">
               Sign up
             </button>
           </div>

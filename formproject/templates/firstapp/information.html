@@ -33,70 +33,97 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'starability-minified/starability-all.min.css' %}" />
+
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'font/iconic/css/material-design-iconic-font.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <style>
-  .tip {
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  background: transparent;
-  border: 10px solid #ccc;
-}
+    .tip {
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      background: transparent;
+      border: 10px solid #ccc;
+    }
 
-.tip-up {
-  top: -25px; /* Same as body margin top + border */
-  left: 10px;
-  border-right-color: transparent;
-  border-left-color: transparent;
-  border-top-color: transparent;
-}
+    .tip-up {
+      top: -25px;
+      /* Same as body margin top + border */
+      left: 10px;
+      border-right-color: transparent;
+      border-left-color: transparent;
+      border-top-color: transparent;
+    }
 
-.tip-down {
-  bottom: -25px;
-  left: 10px;
-  border-right-color: transparent;
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-}
+    .tip-down {
+      bottom: -25px;
+      left: 10px;
+      border-right-color: transparent;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+    }
 
-.tip-left {
-  top: 10px;
-  left: -25px;
-  border-top-color: transparent;
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-}
+    .tip-left {
+      top: 10px;
+      left: -25px;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+    }
 
-.tip-right {
-  top: 10px;
-  right: -25px;
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-}
+    .tip-right {
+      top: 10px;
+      right: -25px;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+    }
 
-.dialogbox .body {
-  position: relative;
-  max-width: 300px;
-  height: auto;
-  margin: 20px 10px;
-  padding: 5px;
-  background-color: #DADADA;
-  border-radius: 3px;
-  border: 5px solid #ccc;
-}
+    .dialogbox .body {
+      position: relative;
+      max-width: 300px;
+      height: auto;
+      margin: 20px 10px;
+      padding: 5px;
+      background-color: #FFC8D3;
+      border-radius: 3px;
+      border: 5px solid #FFBDBD;
+    }
 
-.body .message {
-  min-height: 30px;
-  border-radius: 3px;
-  font-family: Arial;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #797979;
-}
+    .body .message {
+      min-height: 30px;
+      border-radius: 3px;
+      font-family: Arial;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #797979;
+    }
+
+    .question {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    /* .starability-growRotate{
+      width:100%;
+    }
+    .starability-growRotate label{
+      margin-right:8px;
+    } */
   </style>
+
 </head>
+
 <body>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400' rel='stylesheet' type='text/css'>
   <script>
     $("form#e").find("textarea").jQTArea({
       setLimit: 140
@@ -110,15 +137,6 @@
       </button>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="tour.html" class="nav-link">Tour</a></li>
-          <li class="nav-item"><a href="hotel.html" class="nav-link">Hotels</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>Add listing</span></a></li>
-        </ul>
       </div>
     </div>
   </nav>
@@ -144,11 +162,35 @@
 
     <!-- Tab panes -->
     <div class="tab-content">
-      <div id="home" class="container tab-pane active">
+      <div id="home" class="container tab-pane active" style="background:#C0CAF5">
         <br>
         <h3>{{ title }} : Information</h3> {{ content }}
         <br>
         <br>
+        <div>info added by other users</div>
+        <div>
+          <span><b>Do you know more about this place?</b></span>
+          <span><b>Please add you information below.</b></span>
+          <form id="e" class="login100-form validate-form" method="POST" action="{% url 'info_handler' %}">
+            {% csrf_token %}
+            <div class="md-form" style="">
+              <textarea id="form7" rows="1" name="tarea" class="md-textarea form-control"></textarea>
+              <label for="form7" style="padding-left:5px;" >Add Your Review:</label>
+              <button class="login100-form-btn" style="width: 100%; border:1px solid #9193FB" href="#" type="submit">Submit</button>
+              {% if info %}
+              <script>
+                swal({
+                  title: "Your Responce is Submitted!",
+                  text: "This information will be checked, approved and then displayed on this page.",
+                  icon: "success",
+                });
+              </script>
+              {% endif %}
+            </div>
+            <br>
+          </form>
+        </div>
+
 
       </div>
       <div id="menu1" class="container tab-pane fade">
@@ -158,10 +200,176 @@
         <br>
         <br>
       </div>
-      <div id="menu2" class="container tab-pane fade">
+      <div id="menu2" class="container tab-pane fade" style="background:#FFE1E3">
         <br>
         <h3>Review</h3>
-      <!--  <div>
+        <span>Recent Reviews :</span>
+        <div style="width=100%;height:250px;overflow:auto">
+          {% for r in reviews %}
+          <div class="dialogbox">
+            <div class="body">
+              <div class="message">
+                <span><b>{{ r.email }}</b></span>
+                <span style="font-size:10px">Posted:{{ r.date }}</span> {% if r.total_avg == 5 %}
+                <br>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i> {% elif r.total_avg == 4 %}
+                <br>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i> {% elif r.total_avg == 3 %}
+                <br>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i> {% elif r.total_avg == 2 %}
+                <br>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i> {% elif r.total_avg == 1 %}
+                <br>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i> {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <br>
+        <span>Have you visited this place? please fill out the a review to help other visitors.</span>
+        <br>
+        <br> {% if not review_exists %}
+        <form action="{% url 'review_handler' %}" method="POST">
+          {% csrf_token %}
+          <!-- question 1---------------------------------->
+          <span class="question"><i class="fas fa-trash"></i>Cleanliness :</span>
+          <fieldset class="starability-growRotate">
+            <legend></legend>
+            <input type="radio" id="no-rate" checked class="input-no-rate" name="rating" value="0" aria-label="No rating." />
+            <input type="radio" id="rate1" name="rating" style="" value="1" />
+            <label for="rate1">1 star.</label>
+
+            <input type="radio" id="rate2" name="rating" value="2" />
+            <label for="rate2">2 stars.</label>
+
+            <input type="radio" id="rate3" name="rating" value="3" />
+            <label for="rate3">3 stars.</label>
+
+            <input type="radio" id="rate4" name="rating" value="4" />
+            <label for="rate4">4 stars.</label>
+
+            <input type="radio" id="rate5" name="rating" value="5" />
+            <label for="rate5">5 stars.</label>
+
+            <span class="starability-focus-ring"></span>
+          </fieldset>
+          <!-- Question 2_________________________________------------------->
+          <span class="question"><i class="fas fa-gopuram"></i>Preservation of Historical Monuments :</span>
+          <fieldset class="starability-growRotate">
+            <legend></legend>
+            <input type="radio" id="no-rate" class="input-no-rate" name="rating" checked value="0" aria-label="No rating." />
+            <input type="radio" id="rate6" checked name="rating2" value="1" />
+            <label for="rate6">1 star.</label>
+
+            <input type="radio" id="rate7" name="rating2" value="2" />
+            <label for="rate7">2 stars.</label>
+
+            <input type="radio" id="rate8" name="rating2" value="3" />
+            <label for="rate8">3 stars.</label>
+
+            <input type="radio" id="rate9" name="rating2" value="4" />
+            <label for="rate9">4 stars.</label>
+
+            <input type="radio" id="rate10" name="rating2" value="5" />
+            <label for="rate10">5 stars.</label>
+
+            <span class="starability-focus-ring"></span>
+          </fieldset>
+          <!-- question 3______________________________________________________________________-->
+          <span class="question"><i class="fas fa-bus"></i>Transport Facility :</span>
+          <fieldset class="starability-growRotate">
+            <legend></legend>
+            <input type="radio" id="no-rate" class="input-no-rate" name="rating" checked value="0" aria-label="No rating." />
+            <input type="radio" id="rate11" checked name="rating3" value="1" />
+            <label for="rate11">1 star.</label>
+
+            <input type="radio" id="rate12" name="rating3" value="2" />
+            <label for="rate12">2 stars.</label>
+
+            <input type="radio" id="rate13" name="rating3" value="3" />
+            <label for="rate13">3 stars.</label>
+
+            <input type="radio" id="rate14" name="rating3" value="4" />
+            <label for="rate14">4 stars.</label>
+
+            <input type="radio" id="rate15" name="rating3" value="5" />
+            <label for="rate15">5 stars.</label>
+
+            <span class="starability-focus-ring"></span>
+          </fieldset>
+          <!-- question 4______________________________________________________________________-->
+          <span class="question"><i class="fas fa-hands-helping"></i>Behaviour of Locals :</span>
+          <fieldset class="starability-growRotate">
+            <legend></legend>
+            <input type="radio" id="no-rate" class="input-no-rate" name="rating" checked value="0" aria-label="No rating." />
+            <input type="radio" id="rate16" checked name="rating4" value="1" />
+            <label for="rate16">1 star.</label>
+
+            <input type="radio" id="rate17" name="rating4" value="2" />
+            <label for="rate17">2 stars.</label>
+
+            <input type="radio" id="rate18" name="rating4" value="3" />
+            <label for="rate18">3 stars.</label>
+
+            <input type="radio" id="rate19" name="rating4" value="4" />
+            <label for="rate19">4 stars.</label>
+
+            <input type="radio" id="rate20" name="rating4" value="5" />
+            <label for="rate20">5 stars.</label>
+
+            <span class="starability-focus-ring"></span>
+          </fieldset>
+          <!-- question 4______________________________________________________________________-->
+          <span class="question"><i class="fas fa-toilet"></i>Sanitation Facility :</span>
+          <fieldset class="starability-growRotate" width="100%">
+            <legend></legend>
+            <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" aria-label="No rating." />
+            <input type="radio" id="rate21" name="rating5" checked value="1" />
+            <label for="rate21">1 star.</label>
+
+            <input type="radio" id="rate22" name="rating5" value="2" />
+            <label for="rate22">2 stars.</label>
+
+            <input type="radio" id="rate23" name="rating5" value="3" />
+            <label for="rate23">3 stars.</label>
+
+            <input type="radio" id="rate24" name="rating5" value="4" />
+            <label for="rate24">4 stars.</label>
+
+            <input type="radio" id="rate25" name="rating5" value="5" />
+            <label for="rate25">5 stars.</label>
+
+            <span class="starability-focus-ring"></span>
+          </fieldset>
+
+          <button class="login100-form-btn" style="width: 100%; border:1px solid pink" href="#" type="submit">Submit Review</button>
+          <br>
+        </form>
+        {% else %}
+        <span>Thankyou for sumitting review.</span> {% endif %}
+
+        <!--  <div>
           {% for r in reviews %}
           <div class="dialogbox">
             <div class="body">

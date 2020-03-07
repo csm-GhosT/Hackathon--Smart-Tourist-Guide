@@ -67,8 +67,13 @@ class VisionAi():
 
         print(df['description'][0])
         # ny =
-        self.set_summary(wikipedia.summary(df['description'][0]))
-        self.set_wiki_link(wikipedia.page(df['description'][0]).url)
-        self.set_title(str(df['description'][0]))
+        try:
+            self.set_summary(wikipedia.summary(df['description'][0]))
+            self.set_wiki_link(wikipedia.page(df['description'][0]).url)
+            self.set_title(str(df['description'][0]))
+        except:
+            self.set_summary('Sorry ,We were not able to find information about this place.')
+            self.set_wiki_link('Please Search Mannually on Wikipedia')
+            self.set_title(str(df['description'][0]))
 
         return (self.get_summary())

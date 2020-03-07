@@ -8,11 +8,24 @@
   <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/animate.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <link href="{% static 'css/tower-file-input.css' %}" rel="stylesheet" />
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/loaders.css' %}">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
@@ -26,18 +39,39 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="tour.html" class="nav-link">Tour</a></li>
-          <li class="nav-item"><a href="hotel.html" class="nav-link">Hotels</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>Add listing</span></a></li>
+                 <li class="nav-item active"><a  class="nav-link">User Name</a></li>&nbsp;&nbsp;
+                 <li class="nav-item cta"><a href="{% url 'scan_recpt' %}" class="nav-link"><span>Expense Management System</span></a></li>&nbsp;&nbsp;
+                 <li class="nav-item cta"><a href="{% url 'login' %}" class="nav-link"><span>Logout</span></a></li>
         </ul>
       </div>
     </div>
   </nav>
   <!-- END nav -->
+  <div class="content" style="display: none;background: black;" id="loader">
+    <div class="overlay">
+      <div class="overlay-content">
+        <div class="multi-spinner-container">
+          <div class="multi-spinner">
+            <div class="multi-spinner">
+              <div class="multi-spinner">
+                <div class="multi-spinner">
+                  <div class="multi-spinner">
+                    <div class="multi-spinner"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        Loading
+      </div>
+    </div>
+  </div>
+  <script>
+    function display() {
+      document.getElementById("loader").style.display = "block";
+    }
+  </script>
 
 
   <!-- End WOWSlider.com BODY section -->
@@ -46,7 +80,7 @@
     <center>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-md-9 ftco-animate" data-scrollax=" properties: { translateY: '90%' }">
+          <div class="col-md-12 ftco-animate" data-scrollax=" properties: { translateY: '90%' }">
             <h1 class="mb-4" data-scrollax="properties: { translateY: '90%', opacity: 1.6 }"><strong>Explore <br></strong>Get Information in just one click</h1>
 
             <br>
@@ -58,35 +92,50 @@
                 <form method="post" enctype="multipart/form-data">
                   {{form.as_p}} {% csrf_token %}
                   <div class="tower-file">
-                    <input type="file" id="mainDemoInput" name="document" accept="image/*" />
+                    <p>
+                      <input type="file" accept="image/*" id="kk" name="document" onchange="loadFile(event)" style="display: none;">
+                    </p>
+                    <p>
+                      <label for="kk" class="btn btn-success" style="cursor: pointer;width:190px;border-radius:20px">Upload Image</label>
+                    </p>
 
-                    <label for="mainDemoInput" class="btn btn-success" style="width:190px;border-radius:20px;hover ">
-                      <span class="mdi mdi-upload"></span>Select Files
-                    </label>
-                    <br>
-                    <br>&nbsp;
-                    <button type="button" class="btn btn-danger tower-file-clear" title="Clear Selected Files" style="width:190px;border-radius:20px">
+
+                    <button type="reset" onclick="disable()" class="btn btn-danger" title="Clear Selected Files" style="width:190px;border-radius:20px">
                       <span class="mdi mdi-cancel pr-1"></span>Clear Selected Files
                     </button>
                     <br>
-                    <br>&nbsp;
-                    <button type="submit" value="Upload Image" id="submit" name="submit" class="btn btn-dark" style="width:190px;border-radius:20px">
+                    <br>
+                    <button type="submit" onclick="display()" value="Upload Image" id="submit" name="submit" class="btn btn-dark" style="width:190px;border-radius:20px">
                       Submit
                     </button>
+                    <br>
+                    <br>
+                    <p><img id="output" width="300px" /></p>
+                    {% if not_found %}
+                    <script>
+                      swal({
+                        title: "Sorry!",
+                        text: "We were not able to find a match for your image ",
+                        icon: "warning",
+                      });
+                    </script>
+                    {% endif %}
+                    <script>
+                      var loadFile = function(event) {
+                        document.getElementById('output').style.display = 'block'
+                        var image = document.getElementById('output');
+                        image.src = URL.createObjectURL(event.target.files[0]);
+                      };
+
+                      function disable() {
+                        document.getElementById('output').style.display = 'none'
+
+                      };
+                    </script>
                   </div>
                 </form>
               </div>
-              <br>
-              {% if not_found %}
-              <script>
-              swal({
-                title: "Sorry!",
-                text: "We were not able to find a match for your image ",
-                icon: "warning",
-              });
-              </script>
-              {% endif %}
-
+              <br />
 
               <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 
